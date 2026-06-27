@@ -1,13 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
-
-    <title></title>
-    <meta charset="UTF-8/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologia no Campo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body></body>
+<body>
+
+    <div class="acessibilidade">
+        <button onclick="aumentarFonte()">A+</button>
+        <button onclick="diminuirFonte()">A-</button>
+    </div>
+
+    <div class="container">
+        <div class="titulo">
+            <h1>Tecnologia no Campo</h1>
+        </div>
+
+        <p id="texto">
+            A tecnologia tem transformado o campo e ajudado os agricultores a produzir
+            alimentos com mais qualidade e sustentabilidade. Máquinas modernas, drones,
+            sensores e outros equipamentos facilitam o trabalho e aumentam a produção.
+        </p>
+
+        <h2>Digite seu nome:</h2>
+
+        <input type="text" id="nome" placeholder="Seu nome">
+
+        <br>
+
+        <button onclick="entrar()">Entrar</button>
+
+        <h2 id="mensagem"></h2>
+
+        <hr>
+         <div class="titulo">
+            <h2>Exemplos de tecnologias</h2>
+         </div>
+
+            <div class="titulo">
+            <h4>Drones monitoram as plantações.</h4>
+            </div>
+            <p>Os drones sobrevoam as plantações e ajudam a encontrar problemas nas lavouras,
+             com isso o agricultor pode agir mais rápido.
+            </p>
+            <div class="titulo">
+            <h4>Tratores modernos realizam o plantio e a colheita.</h4>
+            </div>
+            <p>
+             Os tratores facilitam o preparo da terra,
+             o plantio e a colheita. Eles economizam tempo e esforço.
+            </p>
+            <div class="titulo">
+            <h4>Sensores ajudam a economizar água.</h4>
+            </div>
+            <p>
+            Os sensores medem a umidade do solo e ajudam a irrigar as plantações
+            de forma eficiente, evitando desperdício de água.
+            </p>
+            <div class="titulo">
+            <h4>Inteligência Artificial auxilia os produtores.</h4>
+            </div>
+            <p>
+            A Inteligência Artificial analisa dados das plantações e ajuda os agricultores
+            </p>
+
+    </div>
+
+<script src="script.js"></script>
+
 </body>
 
 </html>
+
+
+style.css
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #9fd3c7;
+    text-align: center;
+}
+
+.container{
+    width: 70%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+img{
+    width: 300px;
+}
+
+button{
+    padding: 8px 15px;
+    margin: 10px;
+}
+
+input{
+    padding: 8px;
+    width: 250px;
+}
+
+.titulo{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: darkblue;
+}
+  
+
+script.js
+
+let tamanhoFonte = 16;
+
+function entrar(){
+
+    let nome = document.getElementById("nome").value;
+
+    document.getElementById("mensagem").innerHTML =
+    "Olá, " + nome + "!";
+}
+
+function aumentarFonte(){
+
+    tamanhoFonte += 2;
+
+    document.body.style.fontSize = tamanhoFonte + "px";
+
+}
+
+function diminuirFonte(){
+
+    if(tamanhoFonte > 12){
+
+        tamanhoFonte -= 2;
+
+        document.body.style.fontSize = tamanhoFonte + "px";
+
+    }
+
+}
